@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>The Devil of Veritas | The King of Veritas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#000;
+      color:#fff;
+      font-family:'Poppins',sans-serif;
+      overflow-x:hidden;
+      line-height:1.7;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    section{
+      padding:90px 0;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+
+      background:
+      linear-gradient(rgba(0,0,0,0.82),rgba(0,0,0,0.92)),
+      url('The Devil of Veritas Cover Final.png');
+
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      position:relative;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .book-cover img{
+      width:100%;
+      max-width:480px;
+      border-radius:20px;
+      box-shadow:0 0 40px rgba(255,0,0,0.25);
+      transition:0.4s;
+    }
+
+    .book-cover img:hover{
+      transform:scale(1.02);
+    }
+
+    .hero-text .tag{
+      color:#d40026;
+      letter-spacing:4px;
+      text-transform:uppercase;
+      margin-bottom:20px;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    h1{
+      font-family:'Cinzel',serif;
+      font-size:72px;
+      line-height:1.05;
+      margin-bottom:20px;
+    }
+
+    .subtitle{
+      font-size:28px;
+      color:#c40024;
+      font-weight:600;
+      margin-bottom:25px;
+    }
+
+    .hero-text p{
+      color:#ddd;
+      font-size:18px;
+      margin-bottom:35px;
+      max-width:650px;
+    }
+
+    .btn-group{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      padding:16px 34px;
+      border-radius:50px;
+      font-weight:600;
+      transition:0.3s;
+      display:inline-block;
+      font-size:16px;
+    }
+
+    .btn-primary{
+      background:#b3001b;
+      color:#fff;
+      box-shadow:0 0 25px rgba(179,0,27,0.35);
+    }
+
+    .btn-primary:hover{
+      background:#d60026;
+      transform:translateY(-4px);
+    }
+
+    .btn-secondary{
+      border:1px solid #fff;
+      color:#fff;
+    }
+
+    .btn-secondary:hover{
+      background:#fff;
+      color:#000;
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+
+    .badge{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.06);
+      padding:10px 18px;
+      border-radius:40px;
+      font-size:14px;
+      backdrop-filter:blur(8px);
+    }
+
+    /* SECTION */
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-family:'Cinzel',serif;
+      font-size:46px;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#bbb;
+      max-width:760px;
+      margin:auto;
+    }
+
+    /* STORY */
+
+    .story{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:60px;
+      align-items:center;
+    }
+
+    .story-image img{
+      width:100%;
+      border-radius:20px;
+      box-shadow:0 0 30px rgba(255,0,0,0.15);
+    }
+
+    .story-text h3{
+      font-size:40px;
+      margin-bottom:20px;
+      font-family:'Cinzel',serif;
+    }
+
+    .story-text p{
+      margin-bottom:18px;
+      color:#d2d2d2;
+    }
+
+    /* QUOTE */
+
+    .quote{
+      background:#090909;
+      border-top:1px solid rgba(255,255,255,0.05);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+      text-align:center;
+    }
+
+    .quote h2{
+      font-family:'Cinzel',serif;
+      font-size:40px;
+      max-width:900px;
+      margin:auto;
+      line-height:1.6;
+    }
+
+    .quote span{
+      color:#c40024;
+    }
+
+    /* FEATURES */
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .feature-box{
+      background:#0d0d0d;
+      border:1px solid rgba(255,255,255,0.06);
+      padding:35px;
+      border-radius:18px;
+      transition:0.3s;
+    }
+
+    .feature-box:hover{
+      transform:translateY(-6px);
+      border-color:#c40024;
+    }
+
+    .feature-box h4{
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .feature-box p{
+      color:#aaa;
+      font-size:15px;
+    }
+
+    /* CHARACTERS */
+
+    .characters{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .character-card{
+      background:linear-gradient(180deg,#0b0b0b,#151515);
+      padding:40px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .character-card h3{
+      font-family:'Cinzel',serif;
+      font-size:34px;
+      color:#c40024;
+      margin-bottom:18px;
+    }
+
+    .character-card p{
+      color:#ccc;
+    }
+
+    /* CTA */
+
+    .cta{
+      text-align:center;
+
+      background:
+      linear-gradient(rgba(0,0,0,0.84),rgba(0,0,0,0.92)),
+      url('The Devil of Veritas Cover Final.png');
+
+      background-size:cover;
+      background-position:center;
+    }
+
+    .cta h2{
+      font-family:'Cinzel',serif;
+      font-size:56px;
+      margin-bottom:20px;
+    }
+
+    .cta p{
+      color:#ddd;
+      max-width:700px;
+      margin:0 auto 30px;
+      font-size:18px;
+    }
+
+    .warning{
+      margin-top:25px;
+      color:#aaa;
+      font-size:14px;
+    }
+
+    /* FAQ */
+
+    .faq{
+      max-width:900px;
+      margin:auto;
+    }
+
+    .faq-item{
+      background:#0d0d0d;
+      padding:28px;
+      margin-bottom:20px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.06);
+    }
+
+    .faq-item h4{
+      margin-bottom:10px;
+      font-size:22px;
+    }
+
+    .faq-item p{
+      color:#bbb;
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:40px 20px;
+      color:#666;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+
+      .hero-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .book-cover{
+        display:flex;
+        justify-content:center;
+      }
+
+      .btn-group{
+        justify-content:center;
+      }
+
+      .badges{
+        justify-content:center;
+      }
+
+      h1{
+        font-size:52px;
+      }
+
+      .subtitle{
+        font-size:24px;
+      }
+
+      .section-title h2{
+        font-size:38px;
+      }
+
+      .cta h2{
+        font-size:40px;
+      }
+
+      .quote h2{
+        font-size:30px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <div class="hero-grid">
+
+        <!-- BOOK COVER -->
+
+        <div class="book-cover">
+          <img src="The Devil of Veritas Cover Final.png" alt="The Devil of Veritas Book Cover">
+        </div>
+
+        <!-- TEXT -->
+
+        <div class="hero-text">
+
+          <div class="tag">
+            DARK MM MAFIA ROMANCE
+          </div>
+
+          <h1>
+            THE DEVIL <br>
+            OF VERITAS
+          </h1>
+
+          <div class="subtitle">
+            The King of Veritas
+          </div>
+
+          <p>
+            He owns Veritas University.
+            He controls everyone in it.
+            Until one outsider refuses to kneel.
+            Now obsession becomes war.
+          </p>
+
+          <div class="btn-group">
+
+            <a href="https://michaeldesignhub.gumroad.com/l/bwjcg"
+               target="_blank"
+               class="btn btn-primary">
+               READ NOW
+            </a>
+
+            <a href="https://michaeldesignhub.gumroad.com/l/bwjcg"
+               target="_blank"
+               class="btn btn-secondary">
+               GET INSTANT ACCESS
+            </a>
+
+          </div>
+
+          <div class="badges">
+
+            <div class="badge">Enemies to Lovers</div>
+            <div class="badge">Dark Academia</div>
+            <div class="badge">Mafia Romance</div>
+            <div class="badge">Morally Grey</div>
+            <div class="badge">Obsessive Love</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STORY -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Welcome To Veritas
+        </h2>
+
+        <p>
+          A gothic university where power is worshipped,
+          loyalty is paid in blood,
+          and falling for the wrong man could destroy you.
+        </p>
+
+      </div>
+
+      <div class="story">
+
+        <div class="story-image">
+          <img src="The Devil of Veritas Cover Final.png" alt="The Devil of Veritas">
+        </div>
+
+        <div class="story-text">
+
+          <h3>
+            He Was Never Supposed To Fall For The Villain.
+          </h3>
+
+          <p>
+            Killian Vane came to Veritas University to escape his past.
+          </p>
+
+          <p>
+            Then he met Dante Moretti —
+            beautiful, ruthless, untouchable.
+          </p>
+
+          <p>
+            The king of Veritas doesn’t believe in love.
+            Only ownership.
+          </p>
+
+          <p>
+            And now…
+            Killian belongs to him.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- QUOTE -->
+
+  <section class="quote">
+
+    <div class="container">
+
+      <h2>
+        “Rights don’t exist at Veritas.
+        <span>Only permissions.</span>”
+      </h2>
+
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Perfect For Fans Of
+        </h2>
+
+      </div>
+
+      <div class="features">
+
+        <div class="feature-box">
+          <h4>Dark Romance</h4>
+          <p>
+            Obsession, danger, emotional tension, and addictive chemistry.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <h4>Enemies To Lovers</h4>
+          <p>
+            A forbidden attraction between two men trapped in a violent world.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <h4>Dark Academia</h4>
+          <p>
+            Elite universities, secret rituals, and dangerous societies.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <h4>Mafia Power</h4>
+          <p>
+            Blood oaths, power struggles, and morally grey antiheroes.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CHARACTERS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Meet The Monsters
+        </h2>
+
+      </div>
+
+      <div class="characters">
+
+        <div class="character-card">
+
+          <h3>
+            Dante Moretti
+          </h3>
+
+          <p>
+            The king of Veritas.
+            Cold. Violent. Addictive.
+            He destroys everything he touches.
+          </p>
+
+        </div>
+
+        <div class="character-card">
+
+          <h3>
+            Killian Vane
+          </h3>
+
+          <p>
+            The outsider with dangerous secrets.
+            He should run from Dante.
+            Instead… he burns for him.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>
+        Enter Veritas University
+      </h2>
+
+      <p>
+        One blood oath.
+        One forbidden obsession.
+        One dark romance you won’t escape.
+      </p>
+
+      <a href="https://michaeldesignhub.gumroad.com/l/bwjcg"
+         target="_blank"
+         class="btn btn-primary">
+
+         START READING NOW
+
+      </a>
+
+      <div class="warning">
+
+        Warning: This book contains dark themes,
+        violence, obsession, and morally grey characters.
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Frequently Asked Questions
+        </h2>
+
+      </div>
+
+      <div class="faq">
+
+        <div class="faq-item">
+
+          <h4>
+            Is this a standalone?
+          </h4>
+
+          <p>
+            Book One begins the Kings of Veritas series and continues in future books.
+          </p>
+
+        </div>
+
+        <div class="faq-item">
+
+          <h4>
+            What genre is this?
+          </h4>
+
+          <p>
+            Dark MM Mafia Romance mixed with Dark Academia themes.
+          </p>
+
+        </div>
+
+        <div class="faq-item">
+
+          <h4>
+            Is there romance and spice?
+          </h4>
+
+          <p>
+            Yes. Emotional tension, obsessive chemistry,
+            possessive attraction, and mature themes.
+          </p>
+
+        </div>
+
+        <div class="faq-item">
+
+          <h4>
+            What format is available?
+          </h4>
+
+          <p>
+            Instant Digital eBook Download.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 The Devil of Veritas • The King of Veritas
+
+  </footer>
+
+</body>
+</html>
